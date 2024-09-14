@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main_container">
+        <!-- HEADER -->
+        <div id="header">
+            <div class="header_logotype_container">
+                <h1 class="logotype_name">Milestone 1:<span class="purple"> Dynamic Resume</span></h1>
+            </div>
+        </div>
+        
+        <!-- Resume Input Form -->
+        <form id="resume-form">
+            <h2>Personal Information</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required><br>
+
+            <h2>Profile Picture</h2>
+            <label for="profile-pic">Upload your profile picture:</label>
+            <input type="file" id="profile-pic" name="profile-pic" accept="image/*"><br>
+
+            <h2>Education</h2>
+            <label for="education">Degree:</label>
+            <input type="text" id="education" name="education" required><br>
+
+            <label for="school">School/College Name:</label>
+            <input type="text" id="school" name="school" required><br>
+
+            <label for="year">Graduation Year:</label>
+            <input type="text" id="year" name="year" required><br>
+
+            <h2>Skills</h2>
+            <label for="skills">Enter your skills (comma separated):</label>
+            <input type="text" id="skills" name="skills" required><br>
+
+            <h2>Work Experience</h2>
+            <label for="work">Work Experience:</label>
+            <textarea id="work" name="work" required></textarea><br>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+
+        <!-- Generated Resume -->
+        <div id="resume-display" style="display:none;">
+            <div id="personal-info-container">
+                <div id="personal-info-text"></div>
+                <img id="profile-pic" class="profile-pic">
+            </div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+            </div>
+            <div id="education-info"></div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+            </div>
+            <div id="skills-info"></div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+            </div>
+            <div id="work-info"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

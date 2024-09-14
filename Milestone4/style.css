@@ -1,0 +1,139 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Font for the entire page */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f5f5f5; /* Light grey background */
+}
+
+/* Main container */
+#main_container {
+    width: 100%; /* Full width */
+    max-width: 800px; /* Max width for responsiveness */
+    margin: 0 auto; /* Center container */
+}
+
+/* Header styles */
+#header {
+    background-color: #f5f5f5; /* Matches body background */
+    padding: 20px;
+    text-align: center;
+}
+
+.logotype_name {
+    margin: 0;
+    font-size: 2.5em; /* Large font for header */
+    color: #333; /* Dark grey text */
+}
+
+.purple {
+    color: #8a2be2; /* Highlighted text color */
+}
+
+/* Resume form styles */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow */
+    background-color: #f9f9f9; /* Form background */
+    max-width: 500px; /* Max form width */
+}
+
+h2 {
+    margin-top: 0; /* No top margin */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px; /* Space between label and input */
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%; /* Full width inputs */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Padding included in width */
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    background-color: #8a2be2; /* Button background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer on hover */
+    width: 100%; /* Full width button */
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #7a1ae0; /* Darker background on hover */
+}
+
+/* Resume display area */
+#resume-display {
+    background-image: url('background-image.jpg'); /* Background image */
+    background-size: cover; /* Full cover background */
+    background-position: center; /* Center background */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    color: #333; /* Dark grey text */
+    max-width: 500px; /* Max display width */
+    margin: 20px auto; /* Center the display */
+}
+
+/* Horizontal lines and elements */
+.horizontal_line {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.horizontal_line .line_left, .horizontal_line .line_right {
+    flex: 1; /* Stretch lines */
+    height: 2px;
+    background: #8a2be2; /* Purple lines */
+}
+
+.horizontal_line .left_circle, .horizontal_line .right_circle, .horizontal_line .central_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Circle shape */
+    background: #8a2be2; /* Purple circles */
+}
+
+/* Edit and save buttons */
+#edit-btn, #save-btn {
+    display: none;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+#edit-btn {
+    background-color: #302e2a; /* Edit button color */
+}
+
+#save-btn {
+    background-color: #7c1fa7; /* Save button color */
+}
+
+/* Work section textarea */
+#work {
+    width: 450px;
+    height: 150px; /* Fixed height */
+    overflow: auto; /* Scroll if content overflows */
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing */
+}
