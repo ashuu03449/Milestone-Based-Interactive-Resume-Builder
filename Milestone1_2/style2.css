@@ -1,0 +1,696 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    margin: 20px 0;
+    background-color: #f5f5f5;
+}
+.main {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    box-shadow: 2px 2px 8px 2px #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.left {
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.picbox {
+    position: relative;
+    top: 0;
+    width: 75%;
+    height: 42vh;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: #AD49E1;
+    z-index: 1;
+}
+.piclittlebox {
+    width: 100%;
+    height: 32vh;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: #420ba7;
+    background-image: url(./pn3.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.right {
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+.header h3 {
+    font-size: 1rem;
+    color: #AD49E1;
+    letter-spacing: 3px;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+.section {
+    margin-top: 10px;
+}
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #AD49E1;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+.section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+.section ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+.section p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.contact_details_content {
+    margin-top: 10px;
+    color: #AD49E1;
+}
+
+.contact_details_content h2 + p.purple {
+    margin-top: 10px;
+}
+.contact_details_content p {
+    margin: 0;
+}
+.contact_details_content p.purple {
+    margin-top: 20px;
+}
+/* From Uiverse.io by ChanduOffl */ 
+/* From Uiverse.io by Creatlydev */ 
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--clr);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  color: var(--clr);
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.button:hover {
+  background-color: #8916c7;
+}
+
+.button:hover .button__icon-wrapper {
+  color: #8916c7;
+}
+
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+  
+.skills ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.skills ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+.skills ul li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #AD49E1;
+}
+.skill {
+    margin: 10px 0;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+/* From Uiverse.io by gharsh11032000 */ 
+/* From Uiverse.io by aasisodiya */ 
+.skills_button {
+    background-color: #8916c7;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 10em;
+    border-radius: 50px;
+    color: #fff;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    margin-bottom: 10px;
+   }
+   
+   .skills_button:active {
+    color: white;
+    transform: translateY(0.2rem);
+   }
+   
+   .skills_button:hover:not(:disabled) {
+    background: #AD49E1;
+    color: white;
+   }
+   
+   .skills_button:disabled {
+    cursor: auto;
+    color: #AD49E1;
+   }
+   .hello_content{
+    font-size: 14px;
+    font-weight: 300;
+   }
+   .hello_content h2{
+    color: #AD49E1;
+    font-size: 28px;
+
+   }
+   .hello_content p{
+    color: #777;
+    
+    margin-top: 10px;
+   }
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    margin: 20px 0;
+    background-color: #f5f5f5;
+}
+
+.main {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    box-shadow: 2px 2px 8px 2px #ccc;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.left {
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.picbox {
+    position: relative;
+    top: 0;
+    width: 75%;
+    height: 42vh;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background-color: #AD49E1;
+    z-index: 1;
+}
+
+.piclittlebox {
+    width: 100%;
+    height: 32vh;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: #420ba7;
+    background-image: url(./pn3.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.right {
+    width: 60%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.header h3 {
+    font-size: 1rem;
+    color: #AD49E1;
+    letter-spacing: 3px;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+
+.section {
+    margin-top: 10px;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #AD49E1;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.section ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.section p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.contact_details_content {
+    margin-top: 10px;
+    color: #AD49E1;
+}
+
+.contact_details_content h2 + p.purple {
+    margin-top: 10px;
+}
+
+.contact_details_content p {
+    margin: 0;
+}
+
+.contact_details_content p.purple {
+    margin-top: 20px;
+}
+
+/* From Uiverse.io by ChanduOffl */
+/* From Uiverse.io by Creatlydev */
+
+.button {
+    line-height: 1;
+    text-decoration: none;
+    display: inline-flex;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--clr);
+    color: #fff;
+    border-radius: 10rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.button__icon-wrapper {
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    color: var(--clr);
+    background-color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.button:hover {
+    background-color: #8916c7;
+}
+
+.button:hover .button__icon-wrapper {
+    color: #8916c7;
+}
+
+.button__icon-svg--copy {
+    position: absolute;
+    transform: translate(-150%, 150%);
+}
+
+.button:hover .button__icon-svg:first-child {
+    transition: transform 0.3s ease-in-out;
+    transform: translate(150%, -150%);
+}
+
+.button:hover .button__icon-svg--copy {
+    transition: transform 0.3s ease-in-out 0.1s;
+    transform: translate(0);
+}
+
+.skills ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skills ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.skills ul li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #AD49E1;
+}
+
+.skill {
+    margin: 10px 0;
+}
+
+/* From Uiverse.io by adamgiebl */
+/* From Uiverse.io by gharsh11032000 */
+/* From Uiverse.io by aasisodiya */
+
+.skills_button {
+    background-color: #8916c7;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 10em;
+    border-radius: 50px;
+    color: #fff;
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.skills_button:active {
+    color: white;
+    transform: translateY(0.2rem);
+}
+
+.skills_button:hover:not(:disabled) {
+    background: #AD49E1;
+    color: white;
+}
+
+.skills_button:disabled {
+    cursor: auto;
+    color: #AD49E1;
+}
+
+.hello_content {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.hello_content h2 {
+    color: #AD49E1;
+    font-size: 28px;
+}
+
+.hello_content p {
+    color: #777;
+    margin-top: 10px;
+}
+@media (max-width:1200px){
+    body{
+        padding: 15px;
+    }
+    .main{
+        width: 85%;
+    }
+    .picbox {
+        margin-top: 20px;
+        border-radius: 50%;
+        width: 95%;
+        height: 40vh;
+    }
+    .left{
+        width: 35%;
+    }
+    .piclittlebox {
+        top: 0;
+        height: 100%;
+    }
+    .contact_details_content{
+        width: 100%;
+
+    }
+    .contact_details_content p{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px){
+    /* Additional styles for 768px and below */
+    .main {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+    .picbox {
+        margin-top: 20px;
+        border-radius: 50%;
+        width: 50%;
+        height: 50vh;
+    }
+    .piclittlebox {
+        top: 0;
+        height: 100%;
+    }
+    .left, .right {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    .left {
+        background: none;
+    }
+    .skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the skills */
+        padding: 0 10px; /* Optional: add some padding */
+    }
+    .skills ul {
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the list items */
+        gap: 8px;
+    }
+    .skills ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center align each list item */
+        gap: 10px;
+        font-size: 1rem;
+        color: #333;
+    }
+    .skills_button {
+        margin-top: 10px; /* Optional: add some margin above the button */
+    }
+    .contact_details_content {
+        width: 100%;
+    }
+    .hello_content p {
+        padding: 0px 30px;
+    }
+    .header h3 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 482) {
+    /* Additional styles for 480px and below */
+    body{
+        padding: 15px;
+    }
+    .main {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+        box-shadow: none; /* Remove shadow for smaller screens */
+    }
+    .picbox {
+        margin-top: 20px;
+        border-radius: 50%;
+        width: 90%;
+        height: 40vh;
+    }
+    .piclittlebox {
+        top: 0;
+        height: 80%; /* Adjust height for smaller screens */
+    }
+    .left, .right {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+    .header h1{
+        font-size: 20px;
+    }
+    .left {
+        background: none;
+    }
+    .skills {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the skills */
+        padding: 0 10px; /* Optional: add some padding */
+    }
+    .skills ul {
+        list-style-type: none;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align the list items */
+        gap: 8px;
+    }
+    .skills ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center align each list item */
+        gap: 10px;
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        color: #333;
+    }
+    .skills_button {
+        margin-top: 10px; /* Optional: add some margin above the button */
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+    .contact_details_content {
+        width: 100%;
+    }
+    .hello_content p {
+        padding: 0px 20px; /* Adjust padding for smaller screens */
+        font-size: 0.8rem; /* Adjust font size for smaller screens */
+    }
+    .header h3 {
+        text-align: center;
+    }
+}
+@media (max-width:400px){
+    body{
+        padding: 15px;
+    }
+    .picbox {
+        border-radius: 50%;
+        width: 70%;
+        height: 40vh;
+    }
+    .header h1{
+        text-align: center;
+        font-size: 28px;
+    }
+    .piclittlebox {
+        top: 0;
+        height: 100%; /* Adjust height for smaller screens */
+    }
+    .left, .right {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+}

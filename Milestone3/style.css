@@ -104,11 +104,24 @@ button:hover {
 }
 
 /* Profile picture styles */
+/* Profile picture styles (square shape) */
+/* Profile picture container at the top */
+#profile-pic-container {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    margin-bottom: 20px; /* Space below the profile picture */
+}
+
+/* Profile picture styles (square shape) */
 .profile-pic {
-    max-width: 150px; /* Limits the maximum width */
-    height: auto; /* Maintains aspect ratio */
-    border-radius: 5px; /* Makes the image circular */
-    margin-left: 20px; /* Space between text and image */
+    width: 150px; /* Fixed width for square shape */
+    height: 150px; /* Fixed height to maintain square shape */
+    object-fit: cover; /* Crop the image to fit without distortion */
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+#profile-pic{
+    padding: 10px 0px;
 }
 
 

@@ -1,14 +1,16 @@
 var _a, _b, _c;
-// Declare isEdit globally
+// Declare variables globally
 var isEdit = false;
+var originalProfilePicUrl = ''; // Store original picture URL
 // Event listener for form submission to generate resume
 (_a = document.getElementById('resume-form')) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent default form submission
-    generateResume();
+    generateResume(event); // Pass the event to generateResume
 });
 // Function to generate the resume
-function generateResume() {
+function generateResume(event) {
     console.log("Generating resume...");
+    // Retrieve input field values
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var contact = document.getElementById('contact').value;
@@ -17,62 +19,104 @@ function generateResume() {
     var year = document.getElementById('year').value;
     var skills = document.getElementById('skills').value;
     var work = document.getElementById('work').value;
-    // Display resume details
-    document.getElementById('personal-info').innerHTML = "\n        <h2>Personal Information</h2>\n        <p>Name: <span class=\"editable\" id=\"edit-name\">".concat(name, "</span></p>\n        <p>Email: <span class=\"editable\" id=\"edit-email\">").concat(email, "</span></p>\n        <p>Contact Number: <span class=\"editable\" id=\"edit-contact\">").concat(contact, "</span></p>\n    ");
-    document.getElementById('education-info').innerHTML = "\n        <h2>Education</h2>\n        <p>Degree: <span class=\"editable\" id=\"edit-education\">".concat(education, "</span></p>\n        <p>School/College Name: <span class=\"editable\" id=\"edit-school\">").concat(school, "</span></p>\n        <p>Graduation Year: <span class=\"editable\" id=\"edit-year\">").concat(year, "</span></p>\n    ");
-    document.getElementById('skills-info').innerHTML = "\n        <h2>Skills</h2>\n        <p class=\"editable\" id=\"edit-skills\">".concat(skills, "</p>\n    ");
-    document.getElementById('work-info').innerHTML = "\n        <h2>Work Experience</h2>\n        <p class=\"editable\" id=\"edit-work\">".concat(work, "</p>\n    ");
-    // Show the generated resume
+    // Handle Profile Picture Upload
+    var profilePicInput = document.getElementById('profile-pic');
+    if (profilePicInput.files && profilePicInput.files[0]) {
+        var profilePicUrl = URL.createObjectURL(profilePicInput.files[0]);
+        document.getElementById('profile-pic-img').src = profilePicUrl;
+        originalProfilePicUrl = profilePicUrl; // Store the original picture URL
+    }
+    // Display resume details with editable sections
+    document.getElementById('personal-info').innerHTML = "\n        <div style=\"display: flex; align-items: center; justify-content: space-between;\">\n            <div>\n                <h2>Personal Information</h2>\n                <p><strong>Name:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'name')\">".concat(name, "</span></p>\n                <p><strong>Email:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'email')\">").concat(email, "</span></p>\n                <p><strong>Contact Number:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'contact')\">").concat(contact, "</span></p>\n            </div>\n            <img id=\"edit-profile-pic\" src=\"").concat(originalProfilePicUrl, "\" alt=\"Profile Picture\" style=\"width: 160px; height: 160px; margin-left: 50px; object-fit: cover; cursor: default; border-radius:5px;\" />\n        </div>\n    ");
+    document.getElementById('education-info').innerHTML = "\n        <h2>Education</h2>\n        <p><strong>Degree:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'education')\">".concat(education, "</span></p>\n        <p><strong>School/College Name:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'school')\">").concat(school, "</span></p>\n        <p><strong>Graduation Year:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'year')\">").concat(year, "</span></p>\n    ");
+    document.getElementById('skills-info').innerHTML = "\n        <h2>Skills</h2>\n        <p><span class=\"editable\" onblur=\"updateContent(this, 'skills')\">".concat(skills.split(',').map(function (skill) { return skill.trim(); }).join(', '), "</span></p>\n    ");
+    document.getElementById('work-info').innerHTML = "\n        <h2>Work Experience</h2>\n        <p><span class=\"editable\" onblur=\"updateContent(this, 'work')\">".concat(work, "</span></p>\n    ");
+    // Display other sections...
+    // Show the resume and toggle buttons
     document.getElementById('resume-display').style.display = 'block';
-    // Show edit button and hide save button
-    document.getElementById('edit-btn').style.display = 'inline-block';
+    document.getElementById('edit-btn').style.display = 'block';
     document.getElementById('save-btn').style.display = 'none';
 }
-// Edit functionality
+// Function to handle content updates
+function updateContent(element, field) {
+    console.log("Updated ".concat(field, ":"), element.innerText);
+}
+// Function to edit profile picture
+function editProfilePicture() {
+    if (!isEdit)
+        return; // Only allow editing if in edit mode
+    var newInput = document.createElement('input');
+    newInput.type = 'file';
+    newInput.accept = 'image/*';
+    newInput.onchange = function (event) {
+        var _a;
+        var file = (_a = event.target.files) === null || _a === void 0 ? void 0 : _a[0];
+        if (file) {
+            var newPicUrl = URL.createObjectURL(file);
+            document.getElementById('edit-profile-pic').src = newPicUrl;
+            originalProfilePicUrl = newPicUrl; // Update the original picture URL
+        }
+    };
+    newInput.click(); // Simulate a click on the input to open the file dialog
+}
+// Edit button event listener
 (_b = document.getElementById('edit-btn')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', function () {
     toggleEdit(true);
 });
-// Save functionality
+// Save button event listener
 (_c = document.getElementById('save-btn')) === null || _c === void 0 ? void 0 : _c.addEventListener('click', function () {
-    toggleEdit(false); // Switch back to view mode
-    saveEdits(); // Save the changes
+    toggleEdit(false);
+    saveEdits();
 });
-// Toggle between view and edit modes
+// Toggle between edit and view modes
 function toggleEdit(isEditMode) {
     console.log("Toggling edit mode: ".concat(isEditMode));
     isEdit = isEditMode;
-    // Toggle visibility of edit and save buttons
+    // Show/hide buttons
     document.getElementById('edit-btn').style.display = isEditMode ? 'none' : 'inline-block';
     document.getElementById('save-btn').style.display = isEditMode ? 'inline-block' : 'none';
-    var editableFields = document.querySelectorAll('.editable');
-    editableFields.forEach(function (field) {
-        var _a;
-        if (isEditMode) {
-            var currentText = (_a = field.textContent) === null || _a === void 0 ? void 0 : _a.trim();
-            var input = document.createElement('input');
-            input.type = 'text';
-            input.value = currentText || '';
-            field.innerHTML = '';
-            field.appendChild(input);
+    makeFieldsEditable(isEditMode);
+}
+// Make fields editable or non-editable based on mode
+function makeFieldsEditable(isEditable) {
+    var editableElements = document.querySelectorAll('.editable');
+    editableElements.forEach(function (element) {
+        var editableElement = element; // Cast to HTMLElement
+        editableElement.contentEditable = isEditable.toString(); // Set contentEditable
+        if (isEditable) {
+            editableElement.classList.add('editing'); // Optional: Add a class to style the editing state
         }
         else {
-            var inputField = field.querySelector('input');
-            if (inputField) {
-                field.textContent = inputField.value;
-            }
+            editableElement.classList.remove('editing'); // Optional: Remove the class when not editing
         }
     });
+    // Allow profile picture edit only when in edit mode
+    var profilePic = document.getElementById('edit-profile-pic');
+    if (isEditable) {
+        profilePic.style.cursor = 'pointer'; // Change cursor style to pointer
+        profilePic.onclick = editProfilePicture; // Enable picture editing
+    }
+    else {
+        profilePic.style.cursor = 'default'; // Reset cursor style
+        profilePic.onclick = null; // Disable picture editing
+    }
 }
-// Save edits and update the resume display
+// Save edits and update the resume
 function saveEdits() {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
-    // Update the form inputs with the new values after editing
-    document.getElementById('name').value = ((_b = (_a = document.getElementById('edit-name')) === null || _a === void 0 ? void 0 : _a.textContent) !== null && _b !== void 0 ? _b : '');
-    document.getElementById('email').value = ((_d = (_c = document.getElementById('edit-email')) === null || _c === void 0 ? void 0 : _c.textContent) !== null && _d !== void 0 ? _d : '');
-    document.getElementById('contact').value = ((_f = (_e = document.getElementById('edit-contact')) === null || _e === void 0 ? void 0 : _e.textContent) !== null && _f !== void 0 ? _f : '');
-    document.getElementById('education').value = ((_h = (_g = document.getElementById('edit-education')) === null || _g === void 0 ? void 0 : _g.textContent) !== null && _h !== void 0 ? _h : '');
-    document.getElementById('school').value = ((_k = (_j = document.getElementById('edit-school')) === null || _j === void 0 ? void 0 : _j.textContent) !== null && _k !== void 0 ? _k : '');
-    document.getElementById('year').value = ((_m = (_l = document.getElementById('edit-year')) === null || _l === void 0 ? void 0 : _l.textContent) !== null && _m !== void 0 ? _m : '');
-    document.getElementById('skills').value = ((_p = (_o = document.getElementById('edit-skills')) === null || _o === void 0 ? void 0 : _o.textContent) !== null && _p !== void 0 ? _p : '');
-    document.getElementById('work').value = ((_r = (_q = document.getElementById('edit-work')) === null || _q === void 0 ? void 0 : _q.textContent) !== null && _r !== void 0 ? _r : '');
+    console.log("Saving edits...");
+    // Retrieve updated information from editable fields
+    var updatedName = document.querySelector('[onblur="updateContent(this, \'name\')"]').innerText;
+    var updatedEmail = document.querySelector('[onblur="updateContent(this, \'email\')"]').innerText;
+    var updatedContact = document.querySelector('[onblur="updateContent(this, \'contact\')"]').innerText;
+    var updatedEducation = document.querySelector('[onblur="updateContent(this, \'education\')"]').innerText;
+    var updatedSchool = document.querySelector('[onblur="updateContent(this, \'school\')"]').innerText;
+    var updatedYear = document.querySelector('[onblur="updateContent(this, \'year\')"]').innerText;
+    var updatedSkills = document.querySelector('[onblur="updateContent(this, \'skills\')"]').innerText;
+    var updatedWork = document.querySelector('[onblur="updateContent(this, \'work\')"]').innerText;
+    // Update display with new values
+    document.getElementById('personal-info').innerHTML = "\n        <div style=\"display: flex; align-items: center; justify-content: space-between;\">\n            <div class=\"flex1\">\n                <h2>Personal Information</h2>\n                <p><strong>Name:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'name')\">".concat(updatedName, "</span></p>\n                <p><strong>Email:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'email')\">").concat(updatedEmail, "</span></p>\n                <p><strong>Contact Number:</strong> <span class=\"editable\" onblur=\"updateContent(this, 'contact')\">").concat(updatedContact, "</span></p>\n            </div>\n            <img id=\"edit-profile-pic\" class=\"flex2\" src=\"").concat(originalProfilePicUrl, "\" alt=\"Profile Picture\" style=\"width: 160px; height: 160px; margin-left: 50px; object-fit: cover; cursor: default; border-radius:5px;\" />\n        </div>\n    ");
+    // Repeat for other sections if necessary
+    // Hide the save button and show edit button
+    document.getElementById('edit-btn').style.display = 'inline-block';
+    document.getElementById('save-btn').style.display = 'none';
 }

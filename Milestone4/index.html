@@ -27,6 +27,10 @@
             <label for="contact">Contact Number:</label>
             <input type="number" id="contact" name="contact" required><br>
 
+            <h2>Profile Picture</h2>
+            <label for="profile-pic" style="color: rgb(189, 15, 189);">Upload Profile Picture:</label>
+            <input type="file" id="profile-pic" name="profile-pic" accept="image/*"><br>
+
             <h2>Education</h2>
             <label for="education">Degree:</label>
             <input type="text" id="education" name="education" required><br>
@@ -49,39 +53,42 @@
         </form>
 
         <!-- Generated Resume -->
-       <!-- Generated Resume -->
-<div id="resume-display" style="display:none;">
-    <div id="personal-info"></div>
-    <div class="horizontal_line">
-        <div class="line_left"></div>
-        <div class="left_circle"></div>
-        <div class="central_circle"></div>
-        <div class="right_circle"></div>
-        <div class="line_right"></div>
-    </div>
-    <div id="education-info"></div>
-    <div class="horizontal_line">
-        <div class="line_left"></div>
-        <div class="left_circle"></div>
-        <div class="central_circle"></div>
-        <div class="right_circle"></div>
-        <div class="line_right"></div>
-    </div>
-    <div id="skills-info"></div>
-    <div class="horizontal_line">
-        <div class="line_left"></div>
-        <div class="left_circle"></div>
-        <div class="central_circle"></div>
-        <div class="right_circle"></div>
-        <div class="line_right"></div>
-    </div>
-    <div id="work-info"></div>
-    
-    <!-- Edit and Save buttons -->
-    <button id="edit-btn" style="display:none;">Edit</button>
-<button id="save-btn" style="display:none;">Save</button>
+        <div id="resume-display" style="display:none;">
+            <div id="profile-pic-display" style="display:none;">
+                <img id="profile-pic-img" src="" alt="Profile Picture" style="width:150px;height:150px;object-fit:cover;">
+            </div>
 
-</div>
+            <div id="personal-info"></div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+            </div>
+            <div id="education-info"></div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+            </div>
+            <div id="skills-info"></div>
+            <div class="horizontal_line">
+                <div class="line_left"></div>
+                <div class="left_circle"></div>
+                <div class="central_circle"></div>
+                <div class="right_circle"></div>
+                <div class="line_right"></div>
+            </div>
+            <div id="work-info"></div>
+
+            <!-- Edit and Save buttons -->
+            <button id="edit-btn" style="display:none;">Edit</button>
+            <button id="save-btn" style="display:none;">Save</button>
+        </div>
+
     <script src="main.js"></script>
 </body>
 </html>
