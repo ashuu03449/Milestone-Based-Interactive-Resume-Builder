@@ -684,6 +684,10 @@ body {
         text-align: center;
         font-size: 28px;
     }
+    .header h3{
+        font-size: 1rem;
+
+    }
     .piclittlebox {
         top: 0;
         height: 100%; /* Adjust height for smaller screens */
