@@ -31,28 +31,13 @@ body {
     gap: 20px;
     align-items: center;
 }
-.picbox {
-    position: relative;
-    top: 0;
-    width: 75%;
-    height: 42vh;
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-    background-color: #AD49E1;
-    z-index: 1;
-}
+
 .piclittlebox {
     width: 100%;
     height: 32vh;
     position: absolute;
     bottom: 0;
     border-radius: 50%;
-    background-color: #420ba7;
-    background-image: url(./pn3.png);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    z-index: 2;
 }
 .right {
     width: 60%;
