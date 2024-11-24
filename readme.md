@@ -77,7 +77,7 @@ This project takes a static resume and transforms it into a fully dynamic, edita
 - **Vercel** 🚀: For deploying the project live.
 
 ## 🔗 Live Project & Repository Links
-- **Milestone-5** [https://my-milestone-5.vercel.app/]( Live demo) 
+- **Milestone-5** [https://my-milestone-5.vercel.app]( Live demo) 
 - **Live Demo:** [https://vercel.com/new/ayesha-shakoors-projects](#) (Add your Vercel link here)
 - **GitHub Repository:** [https://github.com/ashuu03449/Milestone-Based-Interactive-Resume-Builder](#) (Add your GitHub repository link here)
 
