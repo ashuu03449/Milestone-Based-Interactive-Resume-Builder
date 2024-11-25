@@ -82,6 +82,7 @@ document.getElementById('save-btn')?.addEventListener('click', function() {
     saveEdits(); // Save the changes
 });
 
+
 // Toggle between view and edit modes
 function toggleEdit(isEditMode: boolean) {
     console.log(`Toggling edit mode: ${isEditMode}`);
